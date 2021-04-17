@@ -47,6 +47,7 @@
                      android:layout_height="wrap_content"
                 android:background="@color/colorBackground"
                 android:layout_margin="8dp"
+
                android:layout_below="@id/tabLayout_homeFragment"
             android:layoutDirection="rtl"
                 />
@@ -69,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorPinkDark"
                 android:backgroundTint="@color/colorPinkDark"
+                android:layout_marginTop="16dp"
                 android:layout_below="@id/txtAmazingOfferTime_fragmentHome"
                 android:layoutDirection="rtl" />
 
