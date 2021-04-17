@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#515C6F</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorAccent">#FF6969</color>
+    <color name="colorTextColor">#000000</color>
+    <color name="colorTextColor_gray">#2C2C2C</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorBackground_profile">#A2CEF4</color>
+    <color name="colorPinkSelection">#ff00ff</color>
+    <color name="colorGraySelection">#aaaaaa</color>
+    <color name="colorIconNavigation">#515c6f</color>
+    <color name="colorPinkDark">#FF6969</color>
+    <color name="colorGreen">#7FF330</color>
+    <color name="colorYellow">#FFC107</color>
+    <color name="colorRed">#CC170E</color>
+    <color name="colorBlue">#123342</color>
+    <color name="colorBlueDark">#040A33</color>
+
+
+<!-- WordUp-->
+    <color name="colorWUABlue">#54BAC6</color>
+    <color name="colorWUAYellow">#FFDA70</color>
+    <color name="colorWUAPink">#DB2C66</color>
+    <color name="colorWUAPinkDark">#9B294A</color>
+    <color name="colorWUAGrayDark">#444444</color>
+    <color name="colorWUAGrayLight">#FFFFF3</color>
+    <color name="colorWUAGrayMediate">#464954</color>
+
+<!--    Google-->
+
+    <color name="colorGGreen">#34A853</color>
+    <color name="colorGYellow">#FBBC04</color>
+    <color name="colorGRed">#EA4335</color>
+    <color name="colorGBlue">#4285F4</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+
+</resources>

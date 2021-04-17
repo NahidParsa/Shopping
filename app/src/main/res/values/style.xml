@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="fragmentStyle">
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="layout">
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
+    <style name="title">
+        <item name="android:background">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorTextColor_gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

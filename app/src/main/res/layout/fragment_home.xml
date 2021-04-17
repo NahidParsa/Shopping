@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:layoutDirection="rtl"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.duolingo.open.rtlviewpager.RtlViewPager
+                android:id="@+id/viewPager_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout_homeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewPager_homeFragment"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorBackground"
+                app:tabBackground="@drawable/bg_tabs_circle"
+                app:tabIndicator="@color/colorBackground"
+                app:tabGravity="center"
+                android:layoutDirection="rtl"
+                app:tabIndicatorHeight="0dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCategory_homeFragment"
+                android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:layout_margin="8dp"
+               android:layout_below="@id/tabLayout_homeFragment"
+            android:layoutDirection="rtl"
+                />
+
+            <TextView
+                android:id="@+id/txtAmazingOfferTime_fragmentHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
+                android:layoutDirection="rtl"
+                android:text="@string/txtAmazingOfferTime"
+                android:layout_below="@id/recyclerViewCategory_homeFragment"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAmazingOffers_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPinkDark"
+                android:backgroundTint="@color/colorPinkDark"
+                android:layout_below="@id/txtAmazingOfferTime_fragmentHome"
+                android:layoutDirection="rtl" />
+
+            <TextView
+                android:id="@+id/txtAmazingOfferMore_fragmentHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_centerHorizontal="true"
+                android:text="@string/txtAmazingOfferMore"
+                android:layout_below="@id/recyclerViewAmazingOffers_homeFragment"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewMiddleViewPager_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_below="@id/txtAmazingOfferMore_fragmentHome"
+                android:layoutDirection="rtl" />
+
+            <TextView
+                android:id="@+id/txtNewSpecialTitle_HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
+                android:layoutDirection="rtl"
+                android:text="نادی"
+                android:layout_below="@id/recyclerViewMiddleViewPager_homeFragment"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                 android:id="@+id/recyclerViewNewSpecialProduct_homeFragment"
+                 android:layout_width="match_parent"
+                 android:layout_height="310dp"
+                 android:background="@color/colorYellow"
+                 android:layout_marginTop="16dp"
+                 android:layout_below="@id/txtNewSpecialTitle_HomeFragment"
+                 android:layoutDirection="rtl" />
+
+            <TextView
+                android:id="@+id/txtNewSpecialTitleMore_HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorYellow"
+                android:layout_centerHorizontal="true"
+                android:text="@string/moreNewest"
+                android:layout_below="@id/recyclerViewNewSpecialProduct_homeFragment"
+                android:layout_margin="8dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/newProducts_HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorYellow"
+                android:text="@string/newProducts_homeFragment"
+                android:layout_below="@id/txtNewSpecialTitleMore_HomeFragment"
+                android:layout_margin="8dp"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/moreNewProducts_HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorYellow"
+                android:text="@string/all_new_product"
+                android:layout_below="@id/txtNewSpecialTitleMore_HomeFragment"
+                android:layout_margin="8dp"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNewProduct_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:layout_below="@id/moreNewProducts_HomeFragment"
+                android:layoutDirection="rtl" />
+
+
+            <TextView
+                android:id="@+id/brand_HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorYellow"
+                android:text="@string/brand"
+                android:layout_below="@id/recyclerViewNewProduct_homeFragment"
+                android:layout_margin="8dp"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/moreBrand_HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorYellow"
+                android:text="@string/moreBrand"
+                android:layout_below="@id/recyclerViewNewProduct_homeFragment"
+                android:layout_margin="8dp"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBrand_homeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground"
+                android:layout_below="@id/moreBrand_HomeFragment"
+                android:layoutDirection="rtl" />
+
+
+
+        </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/parent_moreBottomSheet"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+            android:id="@+id/LLPriceChart_moreBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPriceChartProduct_moreBottomSheet"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/chart"/>
+
+            <TextView
+                android:id="@+id/txtPriceChartProduct_moreBottomSheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Price Chart"
+                android:textColor="@color/colorTextColor"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+
+                />
+
+</LinearLayout>
+
+    <View
+            android:id="@+id/XV2"
+            android:layout_width="match_parent"
+            android:layout_height="0.75dp"
+            android:background="@color/colorTextColor_gray"
+            android:layout_margin="8dp"
+        />
+
+    <LinearLayout
+            android:id="@+id/LLCompare_moreBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgCompareProduct_moreBottomSheet"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/compare"/>
+
+            <TextView
+                android:id="@+id/txtCompareProduct_moreBottomSheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Compare Product"
+                android:textColor="@color/colorTextColor"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+
+                />
+
+
+
+</LinearLayout>
+
+    <View
+        android:id="@+id/XV1"
+        android:layout_width="match_parent"
+        android:layout_height="0.75dp"
+        android:background="@color/colorTextColor_gray"
+        android:layout_margin="8dp"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/LLShare_moreBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgShareProduct_moreBottomSheet"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/share" />
+
+        <TextView
+            android:id="@+id/txtShareProduct_moreBottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Share"
+            android:textColor="@color/colorTextColor"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Activity.DetailCategoryActivity">
+
+    <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           >
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               >
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPinkDark"
+        android:layoutDirection="ltr">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_detailCategoryActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/back_detailCategoryActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/back"
+            android:contentDescription="@string/shopping_card" />
+
+            <TextView
+                android:id="@+id/title_detailCategoryActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="لوازم آرایشی و بهداشتی"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/txt1_Special"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbarLayout"
+        android:text="Category Products : "
+        android:padding="4dp"
+        style="@style/title"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBrand_detailCategoryActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt1_Special"
+        android:layoutDirection="ltr"
+        />
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewBrand_detailCategoryActivity"
+        android:text="Newest Products : "
+        android:padding="4dp"
+        style="@style/title"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPopular_detailCategoryActivity"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txt2"
+        android:background="@color/colorBackground"
+        android:layoutDirection="ltr"
+        />
+
+    <TextView
+            android:id="@+id/txt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerViewPopular_detailCategoryActivity"
+            android:text="Amazing Offers : "
+            android:padding="4dp"
+            style="@style/title"
+            />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAmazingOffers_detailCategoryActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt3"
+        android:layoutDirection="ltr"
+        />
+
+           </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
