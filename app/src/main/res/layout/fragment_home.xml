@@ -112,9 +112,10 @@
             <androidx.recyclerview.widget.RecyclerView
                  android:id="@+id/recyclerViewNewSpecialProduct_homeFragment"
                  android:layout_width="match_parent"
-                 android:layout_height="310dp"
+                 android:layout_height="336dp"
                  android:background="@color/colorYellow"
-                 android:layout_marginTop="16dp"
+                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                  android:layout_below="@id/txtNewSpecialTitle_HomeFragment"
                  android:layoutDirection="rtl" />
 

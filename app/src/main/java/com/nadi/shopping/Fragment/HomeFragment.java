@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +34,8 @@ import com.nadi.shopping.API.ApiInterface;
 import com.nadi.shopping.Adapter.AmazingOfferAdapter;
 import com.nadi.shopping.Adapter.BrandAdapter;
 import com.nadi.shopping.Adapter.CategoryAdapter;
+import com.nadi.shopping.Adapter.ConcatAdapter0SpecialProduct;
+import com.nadi.shopping.Adapter.ConcatAdapter1Wall;
 import com.nadi.shopping.Adapter.FakeAdapterAmazing;
 import com.nadi.shopping.Adapter.FakeAdapterWall;
 import com.nadi.shopping.Adapter.MiddleViewPagerAdapter;
@@ -119,6 +122,15 @@ public class HomeFragment extends Fragment {
     List<BrandModel> brandModelList = new ArrayList<>();
     BrandAdapter brandAdapter;
 
+
+
+
+    // special product
+    RecyclerView recyclerViewSpecialProduct;
+    ConcatAdapter0SpecialProduct concatAdapter0SpecialProduct;
+    ConcatAdapter1Wall concatAdapter1Wall;
+    ConcatAdapter concatAdapter;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -153,6 +165,52 @@ public class HomeFragment extends Fragment {
         setNewProduct(view);
 
         setBrand(view);
+
+        setSpecialProduct(view);
+
+    }
+
+    private void setSpecialProduct(View view) {
+
+        recyclerViewSpecialProduct = view.findViewById(R.id.recyclerViewNewSpecialProduct_homeFragment);
+        recyclerViewSpecialProduct.setHasFixedSize(true);
+        recyclerViewSpecialProduct.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+
+
+        ConcatAdapter concatenated = new ConcatAdapter();
+  //
+
+        apiInterface.callItem0AmazingOffer().enqueue(new Callback<List<Item0AmazingOfferModel>>() {
+            @Override
+            public void onResponse(Call<List<Item0AmazingOfferModel>> call, Response<List<Item0AmazingOfferModel>> response) {
+                concatAdapter0SpecialProduct = new ConcatAdapter0SpecialProduct(getContext(), response.body());
+                concatenated.addAdapter(concatAdapter0SpecialProduct);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Item0AmazingOfferModel>> call, Throwable t) {
+                Log.d("TAG", "onFailure: concat amazing");
+            }
+        });
+
+        apiInterface.callItem1wallAmazingOffer().enqueue(new Callback<List<Item1WallAmazingOfferModel>>() {
+            @Override
+            public void onResponse(Call<List<Item1WallAmazingOfferModel>> call, Response<List<Item1WallAmazingOfferModel>> response) {
+                concatAdapter1Wall = new ConcatAdapter1Wall(getContext(), response.body());
+                concatenated.addAdapter(concatAdapter1Wall);
+            }
+
+            @Override
+            public void onFailure(Call<List<Item1WallAmazingOfferModel>> call, Throwable t) {
+                Log.d("TAG", "onFailure: concat wall");
+
+            }
+        });
+
+//        ConcatAdapter concatenated = new ConcatAdapter(concatAdapter1Wall, concatAdapter0SpecialProduct);
+        recyclerViewSpecialProduct.setAdapter(concatenated);
+        concatenated.notifyDataSetChanged();
     }
 
     private void setBrand(View view) {

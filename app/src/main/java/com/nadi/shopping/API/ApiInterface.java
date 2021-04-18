@@ -46,11 +46,8 @@ public interface ApiInterface {
 //
 //    @GET("getWallAmazingOfferProduct.php")
 //    Call<List<AmazingOfferModel>> callItem1wallAmazingOffer();
-//@GET("getAmazingOfferProduct.php")
-// Call<List<Item0AmazingOfferModel>> callItem0AmazingOffer();
-//
-// @GET("getWallAmazingOfferProduct.php")
-// Call<List<Item1WallAmazingOfferModel>> callItem1wallAmazingOffer();
+
+
 
     @GET("getNewSpecialProductTitle.php")
      Call<List<TitleModel>> callTitleModelNewSpecialProduct();
@@ -104,6 +101,14 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("login.php")
     Call<ResponseModel> postLogin(@Field("email") String email, @Field("password") String password);
+
+
+   @GET("getAmazingOfferProduct.php")
+    Call<List<Item0AmazingOfferModel>> callItem0AmazingOffer();
+
+    @GET("getWallSpecialProduct.php")
+    Call<List<Item1WallAmazingOfferModel>> callItem1wallAmazingOffer();
+
 
 }
 

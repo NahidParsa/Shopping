@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:layout_height="320dp"
+    android:layoutDirection="rtl"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="16dp"
+    app:cardCornerRadius="16dp"
+    android:background="@color/colorBackground"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="2dp"
+        android:background="@color/colorGYellow"
+        >
+
+
+        <ImageView
+            android:id="@+id/imgAmazingGoodsWall_item1SpecialHomeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/imgAmazingGoods" />
+
+
+
+        <TextView
+             android:id="@+id/txtTitleWall_item1SpecialHomeFragment"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:textSize="14sp"
+             android:textColor="@color/colorWUAGrayLight"
+             android:textStyle="bold"
+             android:paddingLeft="8dp"
+             android:paddingRight="8dp"
+             android:paddingBottom="1dp"
+             android:paddingTop="2dp"
+             android:text="توضیحات"
+            android:layout_below="@id/imgAmazingGoodsWall_item1SpecialHomeFragment"
+             android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+             />
+
+   </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
