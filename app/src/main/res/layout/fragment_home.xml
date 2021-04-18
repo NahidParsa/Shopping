@@ -125,6 +125,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorYellow"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="7dp"
                 android:text="@string/moreNewest"
                 android:layout_below="@id/recyclerViewNewSpecialProduct_homeFragment"
                 android:layout_margin="8dp"
