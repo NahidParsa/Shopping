@@ -9,14 +9,14 @@
 
 
     <!--    Menu Navigation Bar Home-->
-    <string name="profile">پروفایل</string>
-    <string name="category">محصولات</string>
-    <string name="search">جستجو</string>
-    <string name="home">خانه</string>
+    <string name="profile">Profile</string>
+    <string name="category">Category</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
 
 
     <!--    category item-->
-    <string name="category_name">دسته بندی محصول</string>
+    <string name="category_name">Category List</string>
 
 
     <!--    home fragment-->

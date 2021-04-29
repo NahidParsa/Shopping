@@ -14,12 +14,15 @@
         android:theme="@style/Theme.Shopping"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".Activity.LoginActivity">
+        <activity android:name=".Activity.IntroductionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Activity.LoginActivity">
+
         </activity>
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.CompareActivity" />
@@ -30,9 +33,7 @@
         <activity android:name=".Activity.ShowDetailProductActivity" />
         <activity android:name=".Activity.DetailDetailCategoryActivity" />
         <activity android:name=".Activity.DetailCategoryActivity" />
-        <activity android:name=".Activity.HomeActivity">
-
-        </activity>
+        <activity android:name=".Activity.HomeActivity"></activity>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import com.nadi.shopping.Model.CategoryDetailBrandModel;
 import com.nadi.shopping.Model.CategoryModel;
 import com.nadi.shopping.Model.CategoryWithoutLimitModel;
 import com.nadi.shopping.Model.IntroductionModel;
+import com.nadi.shopping.Model.IntroductionPagerModel;
 import com.nadi.shopping.Model.Item0AmazingOfferModel;
 import com.nadi.shopping.Model.Item1WallAmazingOfferModel;
 import com.nadi.shopping.Model.NewProductsModel;
@@ -109,6 +110,8 @@ public interface ApiInterface {
     @GET("getWallSpecialProduct.php")
     Call<List<Item1WallAmazingOfferModel>> callItem1wallAmazingOffer();
 
+    @GET("getlottiePager.php")
+    Call<List<IntroductionPagerModel>> callItemIntroductionPager();
 
 }
 
