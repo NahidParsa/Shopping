@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.nadi.shopping.API.ApiClient;
 import com.nadi.shopping.API.ApiInterface;
+import com.nadi.shopping.Activity.FAQActivity;
 import com.nadi.shopping.Activity.LoginActivity;
 import com.nadi.shopping.Links.Urls;
 import com.nadi.shopping.Other.MySharedPreferenceConfig;
@@ -70,6 +71,18 @@ public class ProfileFragment extends Fragment {
 
          setGeneralInfo();
          myExitClicked(view);
+         setFaqClicked(view);
+
+    }
+
+    private void setFaqClicked(View view) {
+        faq_RL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), FAQActivity.class));
+            }
+        });
+
     }
 
     private void myExitClicked(View view) {
