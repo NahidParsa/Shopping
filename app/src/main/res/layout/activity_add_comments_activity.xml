@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:hedgehog="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    tools:context=".Activity.AddCommentsActivity">
+
+            <RelativeLayout
+                android:id="@+id/xRL6"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/colorAccent"
+
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/xCV1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:elevation="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    >
+
+                    <ImageView
+                    android:id="@+id/productImg_addCommentsActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackground"
+
+                    android:contentDescription="img"
+                    />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/addView_addCommentsActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add New Comments"
+                    android:layout_toEndOf="@id/xCV1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/productName_addCommentsActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Name"
+                    android:layout_toEndOf="@id/xCV1"
+                    android:layout_below="@id/addView_addCommentsActivity"
+                    android:layout_marginStart="8dp"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/back_addCommentsActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/arrow_forward"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="back"
+                    />
+
+            </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/xLL1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/xRL6"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+    >
+    <TextView
+        android:id="@+id/xTV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Rate: "
+        android:textColor="@color/colorTextColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        />
+
+        <com.hedgehog.ratingbar.RatingBar
+            android:id="@+id/ratingBar_addCommentsActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            hedgehog:clickable="true"
+            hedgehog:halfstart="true"
+            hedgehog:starCount="5"
+            hedgehog:starEmpty="@mipmap/star_empty"
+            hedgehog:starFill="@mipmap/star_full"
+            hedgehog:starHalf="@mipmap/star_half"
+            hedgehog:starImageHeight="60dp"
+            hedgehog:starImageWidth="60dp"
+            hedgehog:starImagePadding="20dp"/>
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/titleViewET_addCommentsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:layout_below="@id/xLL1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:padding="15dp"
+        android:drawableStart="@drawable/title"
+        android:drawableTint="@color/colorGYellow"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/et_custom"
+        android:textColor="@color/colorWUAPinkDark"
+        android:textColorHint="@color/colorWUAPinkDark"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/descriptionViewET_addCommentsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:layout_below="@id/titleViewET_addCommentsActivity"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:padding="15dp"
+        android:drawableStart="@drawable/description"
+        android:drawableTint="@color/colorGBlue"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/et_custom"
+        android:textColor="@color/colorWUAPinkDark"
+        android:textColorHint="@color/colorWUAPinkDark"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/positiveViewET_addCommentsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Positive Points"
+        android:layout_below="@id/descriptionViewET_addCommentsActivity"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/upward"
+        android:drawableTint="@color/colorGreen"
+        android:drawablePadding="8dp"
+        android:padding="15dp"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/et_custom"
+        android:textColor="@color/colorWUAPinkDark"
+        android:textColorHint="@color/colorWUAPinkDark"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/negativeViewET_addCommentsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Negative Points"
+        android:layout_below="@id/positiveViewET_addCommentsActivity"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/downward"
+        android:drawableTint="@color/colorRed"
+        android:drawablePadding="8dp"
+        android:padding="15dp"
+        android:fontFamily="@font/roboto_regular"
+        android:background="@drawable/et_custom"
+        android:textColor="@color/colorWUAPinkDark"
+        android:textColorHint="@color/colorWUAPinkDark"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/add_addCommentsActivity"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorGreen"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="ADD"
+        android:textStyle="bold"
+        android:textColor="@color/colorBackground"
+
+        />
+
+</RelativeLayout>

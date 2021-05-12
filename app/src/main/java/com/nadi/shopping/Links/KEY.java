@@ -27,7 +27,5 @@ public class KEY {
     public static String CategoryId_second = "catogory_id";
 
 
-
-
-
+    public static String id_product = "id_product";
 }

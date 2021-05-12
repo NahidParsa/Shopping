@@ -5,6 +5,7 @@ import com.nadi.shopping.Model.BrandModel;
 import com.nadi.shopping.Model.CategoryDetailBrandModel;
 import com.nadi.shopping.Model.CategoryModel;
 import com.nadi.shopping.Model.CategoryWithoutLimitModel;
+import com.nadi.shopping.Model.CommentsModel;
 import com.nadi.shopping.Model.FAQModel;
 import com.nadi.shopping.Model.IntroductionModel;
 import com.nadi.shopping.Model.IntroductionPagerModel;
@@ -14,6 +15,7 @@ import com.nadi.shopping.Model.NewProductsModel;
 import com.nadi.shopping.Model.OptionProductModel;
 import com.nadi.shopping.Model.PagerModel;
 import com.nadi.shopping.Model.PriceChartModel;
+import com.nadi.shopping.Model.ResponseCommentsModel;
 import com.nadi.shopping.Model.ResponseModel;
 import com.nadi.shopping.Model.TitleModel;
 import com.nadi.shopping.Model.UserModel;
@@ -117,8 +119,26 @@ public interface ApiInterface {
     @GET("getFAQ.php")
     Call<List<FAQModel>> callAFQ();
 
-}
+    @POST("getCommentsByLimit.php")
+    Call<List<CommentsModel>> callCommentsPostIdProduct(@Query("id_product") String id_product);
 
+    @FormUrlEncoded
+    @POST("getPostComments.php")
+    Call<ResponseCommentsModel> postNewComments(@Field("id_product") String id_product,
+                                                @Field("title") String title,
+                                                @Field("description") String description,
+                                                @Field("user_email") String user_email ,
+                                                @Field("rating") String rating,
+                                                @Field("date") String date,
+                                                @Field("positive") String positive ,
+                                                @Field("negative") String negative);
+
+
+// @FormUrlEncoded
+//   @POST("dummy.php")
+//   Call<ResponseCommentsModel> postdummy(@Field("id_product") String id_product);
+
+}
 
 
 

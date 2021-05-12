@@ -31,7 +31,7 @@
                     app:srcCompat="@drawable/back"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="16dp"
-                    android:contentDescription="@string/shopping_card"
+                    android:contentDescription="back"
                     />
 
                 <TextView

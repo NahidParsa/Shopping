@@ -68,7 +68,8 @@
            >
            <LinearLayout
                android:layout_width="match_parent"
-               android:layout_height="wrap_content">
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
 
            <RelativeLayout
                android:layout_width="match_parent"
@@ -281,12 +282,62 @@
                        android:src="@drawable/arrow_forward"
                        />
 
-                   
                </RelativeLayout>
+
+               <View
+                   android:id="@+id/xV3"
+                   android:layout_width="match_parent"
+                   android:layout_height=".7dp"
+                   android:background="@color/colorAccent"
+                   android:layout_marginTop="16dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="8dp"
+                   android:layout_marginBottom="16dp"
+                   android:layout_below="@id/relativeProductPresentation_showDetailActivity"
+                   />
+               <RelativeLayout
+                   android:id="@+id/LLShowComments_showDetailActivity"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@id/xV3"
+
+                   >
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Comments"
+                       android:textColor="@color/colorTextColor"
+                       android:layout_alignParentStart="true"
+                       android:layout_marginStart="8dp"
+                       android:padding="8dp"
+                       />
+                   <TextView
+                      android:id="@+id/showAllComments_showDetailActivity"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="All Comments"
+                      android:textColor="@color/colorTextColor"
+                      android:layout_alignParentEnd="true"
+                      android:layout_marginEnd="8dp"
+                      android:padding="8dp"
+                      />
+               </RelativeLayout>
+
+               <androidx.recyclerview.widget.RecyclerView
+                  android:id="@+id/recyclerShowCommentByLimit_showDetailActivity"
+                  android:layout_width="match_parent"
+                  android:layout_height="316dp"
+                  android:background="@color/colorAccent"
+                  android:layout_below="@id/LLShowComments_showDetailActivity"
+                  android:layout_marginBottom="78dp"
+
+                  />
 
 
 
            </RelativeLayout>
+
+
 
         </LinearLayout>
 

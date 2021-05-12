@@ -20,12 +20,14 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 import com.nadi.shopping.API.ApiClient;
 import com.nadi.shopping.API.ApiInterface;
+import com.nadi.shopping.Adapter.AdapterCommentsByLimit;
 import com.nadi.shopping.Adapter.AdapterProductOption;
 import com.nadi.shopping.Adapter.AdapterSimilarProduct;
 import com.nadi.shopping.Adapter.PagerClassAdapter;
 import com.nadi.shopping.BuildConfig;
 import com.nadi.shopping.Links.KEY;
 import com.nadi.shopping.Links.Urls;
+import com.nadi.shopping.Model.CommentsModel;
 import com.nadi.shopping.Model.NewProductsModel;
 import com.nadi.shopping.Model.OptionProductModel;
 import com.nadi.shopping.Model.PagerModel;
@@ -86,6 +88,13 @@ public class ShowDetailProductActivity extends AppCompatActivity {
     RelativeLayout relativeProperties;
     RelativeLayout relativeProductPresentation;
 
+    // recycler show comments
+    TextView showAllComments_TV;
+    RecyclerView recyclerViewCommentsByLimit;
+    AdapterCommentsByLimit adapterCommentsByLimit;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,6 +133,48 @@ public class ShowDetailProductActivity extends AppCompatActivity {
         myMorePressed(id, title, categoryId);
 
         initBottomViews(offPercentage,realPrice,offPrice);
+
+        initRecyclerShowCommentsByLimit(id);
+
+        myAllCommentsShow(id, title, link_img);
+
+    }
+
+    private void myAllCommentsShow(String id, String title, String link_img) {
+
+        showAllComments_TV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ShowDetailProductActivity.this , ShowCommentsActivity.class);
+                intent.putExtra("ID_PRODUCT", id);
+                intent.putExtra("TITLE", title);
+                intent.putExtra("LINK_IMG", link_img);
+                intent.putExtra("Email", link_img);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void initRecyclerShowCommentsByLimit(String id) {
+
+        recyclerViewCommentsByLimit = findViewById(R.id.recyclerShowCommentByLimit_showDetailActivity);
+        recyclerViewCommentsByLimit.setHasFixedSize(true);
+        recyclerViewCommentsByLimit.setLayoutManager(new LinearLayoutManager(ShowDetailProductActivity.this, RecyclerView.HORIZONTAL, false));
+
+        apiInterface.callCommentsPostIdProduct(id).enqueue(new Callback<List<CommentsModel>>() {
+            @Override
+            public void onResponse(Call<List<CommentsModel>> call, Response<List<CommentsModel>> response) {
+                adapterCommentsByLimit = new AdapterCommentsByLimit(response.body(), ShowDetailProductActivity.this);
+                recyclerViewCommentsByLimit.setAdapter(adapterCommentsByLimit);
+                adapterCommentsByLimit.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<CommentsModel>> call, Throwable t) {
+
+            }
+        });
+
     }
 
     private void initBottomViews(String offPercentage, String realPrice, String offPrice) {
@@ -273,7 +324,7 @@ public class ShowDetailProductActivity extends AppCompatActivity {
         shoppingCart_IV = findViewById(R.id.shoppingCard_showDetailActivity);
         favorite_IV = findViewById(R.id.favorite_showDetailActivity);
         more_IV = findViewById(R.id.more_showDetailActivity);
-
+        showAllComments_TV = findViewById(R.id.showAllComments_showDetailActivity);
 
     }
 

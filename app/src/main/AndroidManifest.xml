@@ -14,11 +14,11 @@
         android:theme="@style/Theme.Shopping"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".Activity.FAQActivity"></activity>
-        <activity android:name=".Activity.IntroductionActivity">
-
-        </activity>
-        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.AddCommentsActivity"></activity>
+        <activity android:name=".Activity.ShowCommentsActivity" />
+        <activity android:name=".Activity.FAQActivity" />
+        <activity android:name=".Activity.IntroductionActivity" />
+        <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.CompareActivity" />
         <activity android:name=".Activity.CompareProductActivity" />
@@ -28,12 +28,12 @@
         <activity android:name=".Activity.ShowDetailProductActivity" />
         <activity android:name=".Activity.DetailDetailCategoryActivity" />
         <activity android:name=".Activity.DetailCategoryActivity" />
-        <activity android:name=".Activity.HomeActivity" >
+        <activity android:name=".Activity.HomeActivity">
             <intent-filter>
-               <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-               <category android:name="android.intent.category.LAUNCHER" />
-           </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
