@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:layoutDirection="rtl"
+    android:layoutDirection="ltr"
     >
     <ScrollView
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 app:tabBackground="@drawable/bg_tabs_circle"
                 app:tabIndicator="@color/colorBackground"
                 app:tabGravity="center"
-                android:layoutDirection="rtl"
+                android:layoutDirection="ltr"
                 app:tabIndicatorHeight="0dp"
                 />
 
@@ -49,7 +49,7 @@
                 android:layout_margin="8dp"
 
                android:layout_below="@id/tabLayout_homeFragment"
-            android:layoutDirection="rtl"
+            android:layoutDirection="ltr"
                 />
 
             <TextView
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTextColor"
-                android:layoutDirection="rtl"
+                android:layoutDirection="ltr"
                 android:text="@string/txtAmazingOfferTime"
                 android:layout_below="@id/recyclerViewCategory_homeFragment"
                 android:layout_margin="8dp"
@@ -72,7 +72,7 @@
                 android:backgroundTint="@color/colorPinkDark"
                 android:layout_marginTop="16dp"
                 android:layout_below="@id/txtAmazingOfferTime_fragmentHome"
-                android:layoutDirection="rtl" />
+                android:layoutDirection="ltr" />
 
             <TextView
                 android:id="@+id/txtAmazingOfferMore_fragmentHome"
@@ -95,7 +95,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_below="@id/txtAmazingOfferMore_fragmentHome"
-                android:layoutDirection="rtl" />
+                android:layoutDirection="ltr" />
 
             <TextView
                 android:id="@+id/txtNewSpecialTitle_HomeFragment"
@@ -117,7 +117,7 @@
                  android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                  android:layout_below="@id/txtNewSpecialTitle_HomeFragment"
-                 android:layoutDirection="rtl" />
+                 android:layoutDirection="ltr" />
 
             <TextView
                 android:id="@+id/txtNewSpecialTitleMore_HomeFragment"
@@ -135,24 +135,26 @@
                 android:id="@+id/newProducts_HomeFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorYellow"
+                android:textColor="@color/colorTextColor"
                 android:text="@string/newProducts_homeFragment"
                 android:layout_below="@id/txtNewSpecialTitleMore_HomeFragment"
                 android:layout_margin="8dp"
                 android:layout_alignParentRight="true"
                 android:textStyle="bold"
+                android:textSize="18sp"
                 />
 
             <TextView
                 android:id="@+id/moreNewProducts_HomeFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorYellow"
+                android:textColor="@color/colorRed"
                 android:text="@string/all_new_product"
                 android:layout_below="@id/txtNewSpecialTitleMore_HomeFragment"
                 android:layout_margin="8dp"
                 android:layout_alignParentLeft="true"
                 android:textStyle="bold"
+                android:textSize="18sp"
                 />
 
 
@@ -162,7 +164,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorBackground"
                 android:layout_below="@id/moreNewProducts_HomeFragment"
-                android:layoutDirection="rtl" />
+                android:layoutDirection="ltr" />
 
 
             <TextView
@@ -175,6 +177,7 @@
                 android:layout_margin="8dp"
                 android:layout_alignParentRight="true"
                 android:textStyle="bold"
+                android:textSize="18sp"
                 />
 
             <TextView
@@ -185,8 +188,10 @@
                 android:text="@string/moreBrand"
                 android:layout_below="@id/recyclerViewNewProduct_homeFragment"
                 android:layout_margin="8dp"
+
                 android:layout_alignParentLeft="true"
                 android:textStyle="bold"
+                android:textSize="18sp"
                 />
 
 
@@ -196,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorBackground"
                 android:layout_below="@id/moreBrand_HomeFragment"
-                android:layoutDirection="rtl" />
+                android:layoutDirection="ltr" />
 
 
 

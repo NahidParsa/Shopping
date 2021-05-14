@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:layoutDirection="ltr"
+    android:layout_marginStart="4dp"
+    android:elevation="16dp"
+    app:cardCornerRadius="16dp"
+    android:backgroundTint="@color/colorBackground"
+    android:background="@color/colorBackground"
+    >
+
+    <RelativeLayout
+        android:id="@+id/RLItem_itemAllNewProductActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="2dp"
+        android:backgroundTint="@color/colorBackground"
+        android:background="@color/colorBackground"
+        >
+
+    
+
+        <ImageView
+            android:id="@+id/imgProduct_itemAllNewProductActivity"
+            android:layout_width="135dp"
+            android:layout_height="220dp"
+            android:layout_margin="8dp"
+            android:background="@color/colorBackground"
+            />
+
+        <TextView
+            android:id="@+id/txtNameProduct_itemAllNewProductActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textSize="12sp"
+            android:textColor="@color/colorTextColor"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="شارژر همراه سوزنی مدل در زمینه "
+            android:layout_toRightOf="@id/imgProduct_itemAllNewProductActivity"
+            />
+
+
+        <LinearLayout
+          android:id="@+id/ll3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginTop="24dp"
+         android:layout_marginBottom="8dp"
+          android:layout_below="@id/txtNameProduct_itemAllNewProductActivity"
+          android:layout_toEndOf="@id/imgProduct_itemAllNewProductActivity"                android:orientation="horizontal">
+
+            <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                android:src="@drawable/store"
+
+                   />
+                  <TextView
+                      android:id="@+id/txtStock_itemAllNewProductActivity"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:textColor="@color/colorAccent"
+                      android:textSize="12sp"
+                      android:textStyle="bold"
+                      android:paddingStart="4dp"
+                      android:layout_marginStart="4dp"
+                      android:paddingTop="2dp"
+                      android:layout_marginTop="8dp"
+                      android:layout_marginBottom="16dp"
+                      android:layout_gravity="center"
+                      android:gravity="center"
+                      android:text="Stock"/>
+              </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll3"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/imgProduct_itemAllNewProductActivity"            android:layout_marginTop="16dp"
+
+            >
+            <TextView
+                android:id="@+id/offPercentage_itemAllNewProductActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#FAFBFA"
+                android:textStyle="bold"
+
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="1dp"
+                android:paddingTop="2dp"
+
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+
+                android:text="27%"
+                android:background="@drawable/bg_offers_percentage"
+
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/offPercentage_itemAllNewProductActivity"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:gravity="end"
+
+                >
+
+        <TextView
+             android:id="@+id/offPrice_itemAllNewProductActivity"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+
+             android:textSize="18sp"
+             android:textColor="@color/colorAccent"
+             android:textStyle="bold"
+
+             android:layout_marginTop="8dp"
+
+             android:paddingLeft="8dp"
+             android:paddingBottom="1dp"
+             android:paddingTop="1dp"
+
+             android:text="550000"
+            />
+
+            <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+
+                android:layout_gravity="center"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+
+                android:paddingLeft="4dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="1dp"
+                android:paddingTop="1dp"
+                android:text="$"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll1"
+            android:layout_toRightOf="@id/imgProduct_itemAllNewProductActivity"
+            android:layout_alignParentEnd="true"
+            android:gravity="right"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:orientation="horizontal">
+
+        <TextView
+             android:id="@+id/realPrice_itemAllNewProductActivity"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="12sp"
+             android:textColor="@color/colorIconNavigation"
+             android:textStyle="bold"
+             android:paddingLeft="8dp"
+             android:paddingBottom="1dp"
+             android:paddingTop="2dp"
+             android:text="550000"
+            android:layout_alignParentEnd="true"
+             android:layout_marginTop="8dp"
+            android:gravity="center"
+
+            android:layout_centerHorizontal="true"
+             />
+
+
+            <TextView
+                android:id="@+id/dollarSign_itemAllNewProductActivity"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textColor="@color/colorIconNavigation"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingStart="4dp"
+                android:paddingEnd="2dp"
+                android:paddingBottom="1dp"
+                android:paddingTop="2dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="$"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.75dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:layout_below="@id/imgProduct_itemAllNewProductActivity"
+            android:background="@color/colorGraySelection"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+

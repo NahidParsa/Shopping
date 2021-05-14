@@ -55,7 +55,7 @@ public class AddCommentsActivity extends AppCompatActivity {
     EditText description_ET;
     EditText positive_ET;
     EditText negative_ET;
-//
+    //
     RatingBar ratingBar_RB;
     static String rating;
 
@@ -93,37 +93,8 @@ public class AddCommentsActivity extends AppCompatActivity {
 
         ratingBar();
         initView(id);
-//        mydummy(id);
 
     }
-
-//    private void mydummy(String id) {
-//
-//        apiInterface.postdummy(id).enqueue(new Callback<ResponseCommentsModel>() {
-//            @Override
-//            public void onResponse(Call<ResponseCommentsModel> call, Response<ResponseCommentsModel> response) {
-//
-//                if (response.body().getMessage() == "Your View Registered Successfully") {
-//                  Log.d("TAG", "onResponse: response" + response.body().getMessage());
-//                  Toast.makeText(AddCommentsActivity.this, "You wrote your view", Toast.LENGTH_SHORT).show();
-//                }else{
-//                  Log.d("TAG", "onResponse: else" + response.body().getMessage());
-//                  Log.d("TAG", "onResponse something went wrong");
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseCommentsModel> call, Throwable t) {
-//
-//                Log.d("TAG", "onFailure: add comments " + t.getMessage());
-//                Toast.makeText(AddCommentsActivity.this, "toast : "+ t.getMessage(), Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//
-//
-//    }
 
     private void initView(String id) {
 

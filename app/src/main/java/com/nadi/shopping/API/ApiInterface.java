@@ -134,9 +134,9 @@ public interface ApiInterface {
                                                 @Field("negative") String negative);
 
 
-// @FormUrlEncoded
-//   @POST("dummy.php")
-//   Call<ResponseCommentsModel> postdummy(@Field("id_product") String id_product);
+    @GET("getAllProduct.php")
+   Call<List<Item0AmazingOfferModel>> callGetAllProduct();
+
 
 }
 

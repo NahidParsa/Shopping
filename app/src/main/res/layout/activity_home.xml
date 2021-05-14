@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    android:layoutDirection="rtl"
+    android:layoutDirection="ltr"
     tools:context=".Activity.HomeActivity">
 
 
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:layoutDirection="rtl"
+        android:layoutDirection="ltr"
         android:background="@color/colorBackground"
         app:menu="@menu/home_menu"
         app:itemIconTint="@color/set_color_on_navigation_home_activity"

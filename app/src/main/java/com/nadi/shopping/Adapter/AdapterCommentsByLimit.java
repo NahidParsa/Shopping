@@ -37,8 +37,10 @@ public class AdapterCommentsByLimit extends RecyclerView.Adapter<AdapterComments
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_cooments_limited, parent, false);
-        return new MyViewHolder(view);
+
+            View view = LayoutInflater.from(context).inflate(R.layout.item_cooments_limited, parent, false);
+            return new MyViewHolder(view);
+
     }
 
     @Override

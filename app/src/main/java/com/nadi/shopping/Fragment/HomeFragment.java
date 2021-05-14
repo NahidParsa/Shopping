@@ -1,5 +1,6 @@
 package com.nadi.shopping.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 import com.nadi.shopping.API.ApiClient;
 import com.nadi.shopping.API.ApiInterface;
+import com.nadi.shopping.Activity.AllNewProductActivity;
 import com.nadi.shopping.Adapter.AmazingOfferAdapter;
 import com.nadi.shopping.Adapter.BrandAdapter;
 import com.nadi.shopping.Adapter.CategoryAdapter;
@@ -114,6 +116,7 @@ public class HomeFragment extends Fragment {
 
      ///////new product
 
+    TextView moreNewProducts_TV;
     RecyclerView recyclerViewNewProduct;
     List<NewProductsModel> newProductsModelList = new ArrayList<>();
     NewProductsAdapter newProductsAdapter;
@@ -167,6 +170,20 @@ public class HomeFragment extends Fragment {
         setBrand(view);
 
         setSpecialProduct(view);
+
+        onMoreNewProductsClicked(view);
+
+    }
+
+    private void onMoreNewProductsClicked(View view) {
+        moreNewProducts_TV = view.findViewById(R.id.moreNewProducts_HomeFragment);
+
+        moreNewProducts_TV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext() , AllNewProductActivity.class));
+            }
+        });
 
     }
 
