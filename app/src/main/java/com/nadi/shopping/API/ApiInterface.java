@@ -135,7 +135,24 @@ public interface ApiInterface {
 
 
     @GET("getAllProduct.php")
-   Call<List<Item0AmazingOfferModel>> callGetAllProduct();
+    Call<List<Item0AmazingOfferModel>> callGetAllProduct();
+
+
+   @GET("getSortByNewest.php")
+  Call<List<Item0AmazingOfferModel>> callGetNewestProduct();
+
+   @GET("getSortByHighToLow.php")
+  Call<List<Item0AmazingOfferModel>> callGetHighToLowProduct();
+
+   @GET("getSortByLowToHigh.php")
+  Call<List<Item0AmazingOfferModel>> callGetLowToHighProduct();
+
+   @GET("getSortByPopular.php")
+  Call<List<Item0AmazingOfferModel>> callGetPopularProduct();
+
+   @GET("getSortByBestselling.php")
+  Call<List<Item0AmazingOfferModel>> callGetBestsellingProduct();
+
 
 
 }

@@ -60,11 +60,12 @@ public class AllNewProductAdapter extends RecyclerView.Adapter<AllNewProductAdap
         else {
             holder.offPercentage_TV.setVisibility(View.VISIBLE);
             holder.realPrice_TV.setVisibility(View.VISIBLE);
+            holder.dollarSign_TV.setVisibility(View.VISIBLE);
 
             holder.offPercentage_TV.setText(item.getOff_percentage() + " %");
             holder.offPrice_TV.setText(decimalOffPrice);
             holder.realPrice_TV.setText(spannableString);
-            holder.dollarSign_TV.setVisibility(View.VISIBLE);
+
         }
 
        holder.titleProduct_TV.setText(item.getName());
