@@ -14,7 +14,8 @@
         android:theme="@style/Theme.Shopping"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".Activity.AllNewProductActivity"></activity>
+        <activity android:name=".Activity.ShowByBrandActivity"></activity>
+        <activity android:name=".Activity.AllNewProductActivity" />
         <activity android:name=".Activity.AddCommentsActivity" />
         <activity android:name=".Activity.ShowCommentsActivity" />
         <activity android:name=".Activity.FAQActivity" />

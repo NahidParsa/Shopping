@@ -2,6 +2,7 @@ package com.nadi.shopping.Links;
 
 public class KEY {
 
+    public static final String name = "name";
     public static String title = "title";
     public static String id = "id";
     public static String brand = "brand";

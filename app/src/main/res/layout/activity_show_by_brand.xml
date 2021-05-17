@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Activity.ShowByBrandActivity"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+          android:id="@+id/appbarLayout_showByBrand"
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          android:background="@color/colorPinkDark"
+      >
+          <androidx.appcompat.widget.Toolbar
+              android:id="@+id/toolbar_showByBrand"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+              <TextView
+                  android:id="@+id/title_showByBrand"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:textColor="@color/colorBackground"
+                  android:text="Brand"/>
+
+                  <ImageView
+                      android:id="@+id/back_showByBrand"
+
+                      android:layout_width="28dp"
+                      android:layout_height="28dp"
+
+                      android:src="@drawable/back"
+
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentStart="true"/>
+
+             </RelativeLayout>
+          </androidx.appcompat.widget.Toolbar>
+      </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_showByBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbarLayout_showByBrand"
+        />
+
+</RelativeLayout>

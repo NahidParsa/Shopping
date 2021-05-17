@@ -1,6 +1,7 @@
 package com.nadi.shopping.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nadi.shopping.Activity.ShowByBrandActivity;
+import com.nadi.shopping.Links.KEY;
 import com.nadi.shopping.Model.BrandModel;
 import com.nadi.shopping.R;
 import com.squareup.picasso.Picasso;
@@ -41,6 +44,15 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyViewHolder
 
         holder.brandName_TV.setText(item.getName());
         Picasso.get().load(item.getLink_img()).into(holder.imgBrand_IV);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ShowByBrandActivity.class);
+                intent.putExtra(KEY.name, item.getName());
+                context.startActivity(intent);
+            }
+        });
 
     }
 

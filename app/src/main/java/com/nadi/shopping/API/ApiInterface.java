@@ -153,6 +153,8 @@ public interface ApiInterface {
    @GET("getSortByBestselling.php")
   Call<List<Item0AmazingOfferModel>> callGetBestsellingProduct();
 
+ @POST("getProductByBrand.php")
+  Call<List<Item0AmazingOfferModel>> callProductByBrand(@Query("name") String name);
 
 
 }
