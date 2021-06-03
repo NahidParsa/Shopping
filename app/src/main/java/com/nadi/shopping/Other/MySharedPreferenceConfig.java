@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.nadi.shopping.Model.UserModel;
 import com.nadi.shopping.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MySharedPreferenceConfig  {
@@ -20,6 +21,7 @@ public class MySharedPreferenceConfig  {
     public static final String EMAIL = "EMAIL";
     public static final String NAME = "NAME";
     public static final String ADDRESS = "ADDRESS";
+    public static final ArrayList<String> SELECTED_CATEGORY = new ArrayList<>();
 
     public MySharedPreferenceConfig(Context context) {
 
@@ -59,4 +61,6 @@ public class MySharedPreferenceConfig  {
     public boolean loginStatus(){
         return sharedPreferences.getBoolean(LOGIN_STATUS, false);
     }
+
+
 }

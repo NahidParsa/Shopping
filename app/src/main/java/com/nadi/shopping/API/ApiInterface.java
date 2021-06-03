@@ -44,14 +44,11 @@ public interface ApiInterface {
    @GET("getPagerModelMiddle.php")
     Call<List<PagerModel>> callPagerModelMiddle();
 
-
 //    @GET("getAmazingOfferProduct.php")
 //    Call<List<AmazingOfferModel>> callItem0AmazingOffer();
 //
 //    @GET("getWallAmazingOfferProduct.php")
 //    Call<List<AmazingOfferModel>> callItem1wallAmazingOffer();
-
-
 
     @GET("getNewSpecialProductTitle.php")
      Call<List<TitleModel>> callTitleModelNewSpecialProduct();
@@ -155,6 +152,13 @@ public interface ApiInterface {
 
  @POST("getProductByBrand.php")
   Call<List<Item0AmazingOfferModel>> callProductByBrand(@Query("name") String name);
+
+ @GET("getAllCategory.php")
+ Call<List<CategoryModel>> callAllCategoryFilter();
+
+ @POST("getProductByBrandAndCategoryID.php")
+  Call<List<Item0AmazingOfferModel>> callFilterByBrandCategory(@Query("name") String name,
+                                                               @Query("catogory_id") String catogory_id);
 
 
 }

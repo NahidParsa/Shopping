@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".Activity.FilterActivity"
+    >
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayout_filterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPinkDark"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_filterActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+                <ImageView
+                    android:id="@+id/back_filterActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:contentDescription="back"
+                    />
+
+                <TextView
+                    android:id="@+id/pageTitle_filterActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbarLayout_filterActivity"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <LinearLayout
+        android:id="@+id/llCategory_filterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="8dp"
+        >
+    <TextView
+        android:id="@+id/category_filterActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:text="Category"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_margin="8dp"
+        android:textColor="@color/colorRed"
+        />
+    <ImageView
+        android:id="@+id/plusCategory_filterActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/add"
+        app:tint="@color/colorRed"
+
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCategory_filterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llCategory_filterActivity"
+       android:visibility="gone"
+        />
+
+
+
+    <LinearLayout
+        android:id="@+id/llBrand_filterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/recyclerCategory_filterActivity"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:padding="8dp"
+        >
+    <TextView
+        android:id="@+id/brand_filterActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
+        android:text="Brand"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_margin="8dp"
+        android:textColor="@color/colorRed"
+        />
+    <ImageView
+        android:id="@+id/plusBrand_filterActivity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/add"
+        app:tint="@color/colorRed"
+
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBrand_filterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llBrand_filterActivity"
+        android:visibility="gone"
+        />
+    </RelativeLayout>
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorAccent"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        app:elevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="8dp"
+        >
+        <TextView
+             android:id="@+id/search_filterActivity"
+             android:layout_width="match_parent"
+             android:layout_height="60dp"
+             android:gravity="center"
+             android:text="SEARCH"
+             android:textStyle="bold"
+            android:textSize="18sp"
+             android:textColor="@color/colorBackground"
+             />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

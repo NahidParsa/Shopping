@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.nadi.shopping.API.ApiClient;
 import com.nadi.shopping.API.ApiInterface;
 import com.nadi.shopping.Adapter.AllNewProductAdapter;
+import com.nadi.shopping.Links.KEY;
 import com.nadi.shopping.Links.Urls;
 import com.nadi.shopping.Model.Item0AmazingOfferModel;
 import com.nadi.shopping.R;
@@ -58,7 +61,11 @@ public class AllNewProductActivity extends AppCompatActivity {
     public static final int SET_CHECKOUT_HIGH_TO_LOW = 5;
     public static final int SET_CHECKOUT_BESTSELLING = 1;
 
+    // general
+    String selectedBrand;
+    String selectedCategory;
 
+    int LAUNCH_SECOND_ACTIVITY = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +75,6 @@ public class AllNewProductActivity extends AppCompatActivity {
         apiInterface = ApiClient.getRetrofitApi(Urls.BASE_URLS).create(ApiInterface.class);
 
         initGeneralView();
-
-
 
     }
 
@@ -82,10 +87,58 @@ public class AllNewProductActivity extends AppCompatActivity {
         sort_LL = findViewById(R.id.LLSort_allNewProductActivity);
         filter_LL = findViewById(R.id.LLFilter_allNewProductActivity);
 
-
+        myFilterClicked();
 
         mySortClicked();
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == LAUNCH_SECOND_ACTIVITY) {
+            if(resultCode == Activity.RESULT_OK){
+                selectedBrand =data.getStringExtra(KEY.SelectedBrand);
+                selectedCategory =data.getStringExtra(KEY.SelectedCategory);
+                setFilterBrandCategory(selectedBrand, selectedCategory);
+            }
+            else if (resultCode == Activity.RESULT_CANCELED) {
+                // Write your code if there's no result
+            }
+        }
+    }
+
+
+    private void setFilterBrandCategory(String selectedBrand, String selectedCategory) {
+
+        apiInterface.callFilterByBrandCategory(selectedBrand, selectedCategory).enqueue(new Callback<List<Item0AmazingOfferModel>>() {
+            @Override
+            public void onResponse(Call<List<Item0AmazingOfferModel>> call, Response<List<Item0AmazingOfferModel>> response) {
+                allNewProductAdapter = new AllNewProductAdapter(response.body(), AllNewProductActivity.this);
+                recyclerAllProduct.setAdapter(allNewProductAdapter);
+                allNewProductAdapter.notifyDataSetChanged();
+                Log.d("TAG", "onResponse: FilterBrandCategory");
+            }
+
+            @Override
+            public void onFailure(Call<List<Item0AmazingOfferModel>> call, Throwable t) {
+                Log.d("TAG", "onFailure: FilterBrandCategory");
+            }
+        });
+
+    }
+
+    private void myFilterClicked() {
+        filter_LL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(AllNewProductActivity.this, FilterActivity.class);
+                startActivityForResult(i, LAUNCH_SECOND_ACTIVITY);
+
+            }
+        });
     }
 
     private void mySortClicked() {

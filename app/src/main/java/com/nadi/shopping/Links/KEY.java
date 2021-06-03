@@ -29,4 +29,6 @@ public class KEY {
 
 
     public static String id_product = "id_product";
+    public static String SelectedCategory = "SelectedCategory";
+    public static String SelectedBrand = "SelectedBrand";
 }
