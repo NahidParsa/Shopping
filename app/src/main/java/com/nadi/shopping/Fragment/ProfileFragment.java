@@ -22,6 +22,7 @@ import com.nadi.shopping.Activity.LoginActivity;
 import com.nadi.shopping.Links.Urls;
 import com.nadi.shopping.Other.MySharedPreferenceConfig;
 import com.nadi.shopping.R;
+import com.nadi.shopping.ROOM.FavoriteRoomDBActivity;
 
 public class ProfileFragment extends Fragment {
 
@@ -72,7 +73,20 @@ public class ProfileFragment extends Fragment {
          setGeneralInfo();
          myExitClicked(view);
          setFaqClicked(view);
+         favoriteListClicked(view);
 
+    }
+
+    private void favoriteListClicked(View view) {
+        favoriteList_RL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(view.getContext() , FavoriteRoomDBActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     private void setFaqClicked(View view) {

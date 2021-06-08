@@ -90,4 +90,27 @@ dependencies {
     // rating bar
     implementation 'com.hedgehog.ratingbar:app:1.1.2'
 
+
+    // room
+    def room_version = "2.3.0"
+
+      implementation "androidx.room:room-runtime:$room_version"
+      annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    def room_arch_version = "1.1.1"
+
+       implementation "android.arch.persistence.room:runtime:$room_arch_version"
+       annotationProcessor "android.arch.persistence.room:compiler:$room_arch_version" // For Kotlin use kapt instead of annotationProcessor
+
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+
+       // optional - RxJava support for Room
+       implementation "android.arch.persistence.room:rxjava2:$room_arch_version"
+    implementation "androidx.room:room-rxjava2:2.3.0"
+
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+
+
 }

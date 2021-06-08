@@ -14,7 +14,8 @@
         android:theme="@style/Theme.Shopping"
         android:usesCleartextTraffic="true"
         tools:replace="android:theme">
-        <activity android:name=".Activity.FilterActivity"></activity>
+        <activity android:name=".ROOM.FavoriteRoomDBActivity"></activity>
+        <activity android:name=".Activity.FilterActivity" />
         <activity android:name=".Activity.ShowByBrandActivity" />
         <activity android:name=".Activity.AllNewProductActivity" />
         <activity android:name=".Activity.AddCommentsActivity" />

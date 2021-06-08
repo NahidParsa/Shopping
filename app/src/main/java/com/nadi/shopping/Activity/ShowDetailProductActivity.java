@@ -1,14 +1,19 @@
 package com.nadi.shopping.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.StrikethroughSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -32,14 +37,21 @@ import com.nadi.shopping.Model.NewProductsModel;
 import com.nadi.shopping.Model.OptionProductModel;
 import com.nadi.shopping.Model.PagerModel;
 import com.nadi.shopping.R;
+import com.nadi.shopping.ROOM.FavoriteDatabase;
+import com.nadi.shopping.ROOM.FavoriteEntityModel;
+import com.nadi.shopping.ROOM.FavoriteRepository;
+import com.nadi.shopping.ROOM.FavoriteRoomDBActivity;
+import com.nadi.shopping.ROOM.ROOMDB;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.DELETE;
 
 public class ShowDetailProductActivity extends AppCompatActivity {
 
@@ -92,7 +104,17 @@ public class ShowDetailProductActivity extends AppCompatActivity {
     TextView showAllComments_TV;
     RecyclerView recyclerViewCommentsByLimit;
     AdapterCommentsByLimit adapterCommentsByLimit;
+    // room db
+    public static ROOMDB roomdb;
+    public static FavoriteRepository favoriteRepository;
 
+    // baray to por ya khali bodan dar filter
+
+    public static  int IMG_FAVORITE = 1;
+    public static final int INSERT = 2;
+    public static final int DELETE = 1;
+
+    int alreadyFavorite = 1 ;
 
 
     @Override
@@ -108,6 +130,7 @@ public class ShowDetailProductActivity extends AppCompatActivity {
     private void init() {
 
         initGeneralView();
+
         getMyBundle();
     }
 
@@ -138,7 +161,103 @@ public class ShowDetailProductActivity extends AppCompatActivity {
 
         myAllCommentsShow(id, title, link_img);
 
+        initRoomDataBase();
+
+        myFavoriteClicked(id, title,brand, categoryId,offPercentage, realPrice,offPrice, link_img);
+
+
     }
+    private void initRoomDataBase() {
+        roomdb = ROOMDB.getInstance(this);
+        favoriteRepository = FavoriteRepository.getInstance(FavoriteDatabase.getInstance(roomdb.favoriteDao()));
+    }
+
+
+    private void myFavoriteClicked(String id, String title, String brand, String categoryId,
+                                   String offPercentage, String realPrice, String offPrice,String link_img) {
+
+//        myCheckFavorite();
+
+
+        favorite_IV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+                Log.d("TAG", " myFavoriteClicked : alreadyFavorite " + alreadyFavorite);
+
+                switch (alreadyFavorite) {
+                    case 1 : {
+
+                        favorite_IV.setImageResource(R.drawable.favorite);
+                        FavoriteEntityModel favoriteEntityModel = new FavoriteEntityModel();
+
+                        favoriteEntityModel.setProduct_id(id);
+                        favoriteEntityModel.setBrand(brand);
+                        favoriteEntityModel.setCatogory_id(categoryId);
+                        favoriteEntityModel.setOff_percentage(offPercentage);
+                        favoriteEntityModel.setPrice(realPrice);
+                        favoriteEntityModel.setDiscount_price(offPrice);
+                        favoriteEntityModel.setName(title);
+                        favoriteEntityModel.setLink_img(link_img);
+
+//                        IMG_FAVORITE = INSERT;
+                        favorite_IV.setImageResource(R.drawable.favorite);
+
+                        favoriteRepository.insertFavorite(favoriteEntityModel);
+
+                        alreadyFavorite = 2;
+
+                        Intent intent = new Intent(ShowDetailProductActivity.this, FavoriteRoomDBActivity.class);
+                        startActivity(intent);
+
+                        break;
+                    }
+
+                case 2:{
+
+                    favorite_IV.setImageResource(R.drawable.empty_favorite);
+
+                    FavoriteEntityModel favoriteEntityModel = new FavoriteEntityModel();
+
+                    favoriteEntityModel.setProduct_id(id);
+                    favoriteEntityModel.setBrand(brand);
+                    favoriteEntityModel.setCatogory_id(categoryId);
+                    favoriteEntityModel.setOff_percentage(offPercentage);
+                    favoriteEntityModel.setPrice(realPrice);
+                    favoriteEntityModel.setDiscount_price(offPrice);
+                    favoriteEntityModel.setName(title);
+                    favoriteEntityModel.setLink_img(link_img);
+
+//                    IMG_FAVORITE = DELETE;
+                    favorite_IV.setImageResource(R.drawable.empty_favorite);
+
+                    alreadyFavorite = 1;
+
+//                    favoriteRepository.deleteFavorite(favoriteEntityModel);
+
+                    favoriteRepository.deleteByproductId(id);
+                    break;
+                  }
+
+                }
+            }
+        });
+
+    }
+
+//    private void myCheckFavorite() {
+//
+//        switch (IMG_FAVORITE) {
+//            case INSERT:
+//                favorite_IV.setImageResource(R.drawable.favorite);
+//                break;
+//            case DELETE:
+//                favorite_IV.setImageResource(R.drawable.empty_favorite);
+//                break;
+//            default:
+//                throw new IllegalStateException("unexpected value" + IMG_FAVORITE);
+//        }
+//    }
 
     private void myAllCommentsShow(String id, String title, String link_img) {
 
