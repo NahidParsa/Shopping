@@ -38,9 +38,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/shopping_cart"
-                android:padding="8dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
                 android:contentDescription="@string/shopping_card"
                 />
+
+            <TextView
+                android:id="@+id/badge_showDetailActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_badge"
+                android:text="99"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/colorWUAGrayLight"
+                android:gravity="center"
+
+
+                />
+
             <ImageView
                 android:id="@+id/favorite_showDetailActivity"
                 android:layout_width="wrap_content"

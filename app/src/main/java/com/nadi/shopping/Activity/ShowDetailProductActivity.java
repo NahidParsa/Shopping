@@ -36,12 +36,14 @@ import com.nadi.shopping.Model.CommentsModel;
 import com.nadi.shopping.Model.NewProductsModel;
 import com.nadi.shopping.Model.OptionProductModel;
 import com.nadi.shopping.Model.PagerModel;
+import com.nadi.shopping.Other.MySharedPreferenceConfig;
 import com.nadi.shopping.R;
 import com.nadi.shopping.ROOM.FavoriteDatabase;
 import com.nadi.shopping.ROOM.FavoriteEntityModel;
 import com.nadi.shopping.ROOM.FavoriteRepository;
 import com.nadi.shopping.ROOM.FavoriteRoomDBActivity;
 import com.nadi.shopping.ROOM.ROOMDB;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -79,6 +81,7 @@ public class ShowDetailProductActivity extends AppCompatActivity {
     TextView offPercentage_TV;
     TextView realPrice_TV;
     TextView offPrice_TV;
+    TextView badgeNotification_TV;
 
     // pager
     ViewPager viewPager_VP;
@@ -110,12 +113,14 @@ public class ShowDetailProductActivity extends AppCompatActivity {
 
     // baray to por ya khali bodan dar filter
 
-    public static  int IMG_FAVORITE = 1;
-    public static final int INSERT = 2;
-    public static final int DELETE = 1;
+//    public static  int IMG_FAVORITE = 1;
+//    public static final int INSERT = 2;
+//    public static final int DELETE = 1;
 
     int alreadyFavorite = 1 ;
 
+    MySharedPreferenceConfig mySharedPreferenceConfig;
+    String user_email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,8 +128,9 @@ public class ShowDetailProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_detail_product);
 
         apiInterface = ApiClient.getRetrofitApi(Urls.BASE_URLS).create(ApiInterface.class);
-
+        mySharedPreferenceConfig = new MySharedPreferenceConfig(this);
         init();
+
     }
 
     private void init() {
@@ -146,6 +152,8 @@ public class ShowDetailProductActivity extends AppCompatActivity {
         /////////////
         link_img = bundle.getString(KEY.link_img);
 
+        user_email = mySharedPreferenceConfig.writeUserInfoPref().get(MySharedPreferenceConfig.EMAIL);
+
         setGeneralInfo(id, title, brand);
         initViewPager(id);
         initSimilar(categoryId);
@@ -165,8 +173,33 @@ public class ShowDetailProductActivity extends AppCompatActivity {
 
         myFavoriteClicked(id, title,brand, categoryId,offPercentage, realPrice,offPrice, link_img);
 
+        myCartClicked(user_email, id);
 
     }
+
+    private void myCartClicked(String user_email, String id) {
+
+        shoppingCart_IV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                int count = badgeNotification_N.get
+                sendProductToMyCart(user_email, id);
+
+            }
+        });
+
+
+    }
+
+    private void sendProductToMyCart(String user_email, String id) {
+
+
+    
+
+
+    }
+
     private void initRoomDataBase() {
         roomdb = ROOMDB.getInstance(this);
         favoriteRepository = FavoriteRepository.getInstance(FavoriteDatabase.getInstance(roomdb.favoriteDao()));
@@ -182,7 +215,7 @@ public class ShowDetailProductActivity extends AppCompatActivity {
         favorite_IV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 Log.d("TAG", " myFavoriteClicked : alreadyFavorite " + alreadyFavorite);
 
                 switch (alreadyFavorite) {
@@ -444,6 +477,7 @@ public class ShowDetailProductActivity extends AppCompatActivity {
         favorite_IV = findViewById(R.id.favorite_showDetailActivity);
         more_IV = findViewById(R.id.more_showDetailActivity);
         showAllComments_TV = findViewById(R.id.showAllComments_showDetailActivity);
+        badgeNotification_TV = findViewById(R.id.badge_showDetailActivity);
 
     }
 

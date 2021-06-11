@@ -2,6 +2,7 @@ package com.nadi.shopping.API;
 
 import com.nadi.shopping.Model.AmazingOfferModel;
 import com.nadi.shopping.Model.BrandModel;
+import com.nadi.shopping.Model.CartModel;
 import com.nadi.shopping.Model.CategoryDetailBrandModel;
 import com.nadi.shopping.Model.CategoryModel;
 import com.nadi.shopping.Model.CategoryWithoutLimitModel;
@@ -159,6 +160,11 @@ public interface ApiInterface {
  @POST("getProductByBrandAndCategoryID.php")
   Call<List<Item0AmazingOfferModel>> callFilterByBrandCategory(@Query("name") String name,
                                                                @Query("catogory_id") String catogory_id);
+
+ @FormUrlEncoded
+ @POST("getSendCart.php")
+   Call<List<CartModel>> postProductToCart(@Query("product_id") String product_id,
+                                           @Query("user_email") String user_email);
 
 
 }
