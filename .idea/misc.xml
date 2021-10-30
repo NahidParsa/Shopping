@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Nadi/Desktop/Shopping/app/src/main/res/layout/activity_home.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/Nadi/Desktop/Shopping/app/src/main/res/layout/fragment_home.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/Nadi/Desktop/Shopping/app/src/main/res/layout/item_middle_pager_view.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/Nadi/Desktop/Shopping/app/src/main/res/layout/item_pager.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/Nadi/Desktop/Shopping/app/src/main/res/menu/home_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
